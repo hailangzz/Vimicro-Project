@@ -1,3 +1,108 @@
+import imageio
+import imgaug as ia
+import imgaug.augmenters as iaa
+from PIL import Image
+import matplotlib.pyplot as plt
+
+test_images='../00a0f008-3c67908e.jpg'
+input_img = imageio.imread(test_images)
+plt.imshow(input_img)
+plt.show()
+
+#水平翻转
+hflip= iaa.Fliplr(p=1.0)
+input_hf = hflip.augment_image(input_img)
+plt.imshow(input_hf)
+plt.show()
+
+#垂直翻转
+vflip= iaa.Flipud(p=1.0)
+input_vf= vflip.augment_image(input_img)
+plt.imshow(input_vf)
+plt.show()
+
+# 图像旋转
+rot1 = iaa.Affine(rotate=(-50,20))
+input_rot1 = rot1.augment_image(input_img)
+plt.imshow(input_rot1)
+plt.show()
+
+#图像裁剪
+crop1 = iaa.Crop(percent=(0, 0.3))
+input_crop1 = crop1.augment_image(input_img)
+plt.imshow(input_crop1)
+plt.show()
+
+#图像增加噪点
+noise=iaa.AdditiveGaussianNoise(10,40)
+input_noise=noise.augment_image(input_img)
+plt.imshow(input_noise)
+plt.show()
+
+#图像剪切
+shear = iaa.Affine(shear=(-40,40))
+input_shear=shear.augment_image(input_img)
+plt.imshow(input_shear)
+plt.show()
+
+#图像对比度：该增强器通过缩放像素值来调整图像对比度。​​​​​​​
+contrast=iaa.GammaContrast((0.5, 2.0))
+contrast_sig = iaa.SigmoidContrast(gain=(5, 10), cutoff=(0.4, 0.6))
+contrast_lin = iaa.LinearContrast((0.6, 0.4))
+
+input_contrast = contrast.augment_image(input_img)
+sigmoid_contrast = contrast_sig.augment_image(input_img)
+linear_contrast = contrast_lin.augment_image(input_img)
+plt.imshow(input_contrast)
+plt.show()
+plt.imshow(sigmoid_contrast)
+plt.show()
+plt.imshow(linear_contrast)
+plt.show()
+
+# 图像转换 ： “弹性变换”增强器通过使用位移场在局部移动像素来变换图像。
+elastic = iaa.ElasticTransformation(alpha=60.0, sigma=4.0)
+polar = iaa.WithPolarWarping(iaa.CropAndPad(percent=(-0.2, 0.7)))
+jigsaw = iaa.Jigsaw(nb_rows=20, nb_cols=15, max_steps=(3, 7))
+input_elastic = elastic.augment_image(input_img)
+input_polar = polar.augment_image(input_img)
+input_jigsaw = jigsaw.augment_image(input_img)
+plt.imshow(input_elastic)
+plt.show()
+plt.imshow(input_polar,)
+plt.show()
+plt.imshow(input_jigsaw)
+plt.show()
+
+
+
+
+
+
+########################################################################################################################
+# 图像增广模板
+
+#图像增强案例1
+# !usr/bin/python
+# -*- coding: utf-8 -*-
+import cv2
+from imgaug import augmenters as iaa
+
+# imgaug test
+seq = iaa.Sequential([
+    iaa.Crop(px=(0, 16)),  # 从每侧裁剪图像0到16px（随机选择）
+    iaa.Fliplr(0.5),  # 水平翻转图像
+    iaa.GaussianBlur(sigma=(0, 3.0))  # 使用0到3.0的sigma模糊图像
+])
+
+imglist = []
+img = cv2.imread('1.jpg')
+imglist.append(img)
+images_aug = seq.augment_images(imglist)
+cv2.imwrite("2.jpg", images_aug[0])
+
+
+# 图像增强案例2
 import numpy as np
 import imgaug as ia
 import imgaug.augmenters as iaa
@@ -151,3 +256,9 @@ for count in range(100):
         # 保存图片
         cv2.imwrite(savedpath + filename, images_aug[index])
         print('image of count%s index%s has been writen' % (count, index))
+
+
+
+
+
+
