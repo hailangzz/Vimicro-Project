@@ -1,1 +1,12 @@
-Python ./tools/detect_yolov5.py -h
+# 训练检测模型
+
+Python train_yolov5.py
+
+
+# 测试检测模型
+Python ./detect_yolov5.py --weights ./weights/yolov5_best.pt --source ./demo/images
+
+
+# 测试识别模型
+
+Python test_lprnet.py --pretrained_model ./weights/lprnet_best.pth --test_img_dirs ./demo/rec_test/皖A575N1_279.jpg --show True

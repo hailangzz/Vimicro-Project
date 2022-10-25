@@ -36,7 +36,8 @@ class create_new_mask_sample:
     def create_random_shape_mask_img(self,resize=(24,24)):
         choice_mask_info = random.choice(self.total_new_mask_sample_list)
         mask_img = Image.open(choice_mask_info['image_path'])
-        resize_mask = mask_img.resize(resize, Image.BILINEAR)
+        resize_mask = mask_img.resize(resize, Image.BILINEAR) # 双现行插值
+        resize_mask = mask_img.resize(resize, Image.ANTIALIAS)
 
         return choice_mask_info['classfiy_name'],resize_mask
 
@@ -249,7 +250,7 @@ class Create_train_sample:
 
         else: # 自定义构造样本时
             sample_num = 0
-            my_create_sample_number = 18000
+            my_create_sample_number = 45000
             for lable_xml_index in tqdm(range(my_create_sample_number)):
 
                 # lable_xml = self.total_lable_list[lable_xml_index]
@@ -259,7 +260,7 @@ class Create_train_sample:
                 # origin_image_path = os.path.join(self.total_image_list,lable_xml.split('.')[0]+'jpg')
                 train_label_info = self.cut_mark_area(LableBoxInfo)
 
-                if sample_num < 17000:
+                if sample_num < 42000:
                     self.creat_coco_lable(train_label_info,sample_num, 'train', create_new_sample)
                 else:
                     self.creat_coco_lable(train_label_info,sample_num, 'val', create_new_sample)

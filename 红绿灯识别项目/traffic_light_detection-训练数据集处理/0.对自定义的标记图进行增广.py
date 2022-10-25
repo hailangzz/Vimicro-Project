@@ -35,10 +35,10 @@ class generate_more_type_image:
 
     def random_generate(self,input_img):
 
-        GaussianBlur_value = random.uniform(0,2)
-        GaussianNoise_value = (random.randint(0,30),random.randint(0,30))
-        Multiply_value = (random.uniform(0.9,1),random.uniform(1,1.1))
-        GammaContrast_value = (random.uniform(0.9,1),random.uniform(1,1.1))
+        GaussianBlur_value = random.uniform(0,1.5)
+        GaussianNoise_value = (random.randint(0,25),random.randint(0,25))
+        Multiply_value = (random.uniform(0.95,1),random.uniform(1,1.05))
+        GammaContrast_value = (random.uniform(0.95,1),random.uniform(1,1.05))
 
         seq = iaa.Sequential([
             # iaa.Crop(px=(0, 16)),  # 从每侧裁剪图像0到16px（随机选择）
