@@ -281,7 +281,9 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                  cache_images=False, single_cls=False, stride=32, pad=0.0):
         try:
             path = str(Path(path))  # os-agnostic
+            print(path)
             parent = str(Path(path).parent) + os.sep
+            print(parent)
             if os.path.isfile(path):  # file
                 with open(path, 'r') as f:
                     f = f.read().splitlines()

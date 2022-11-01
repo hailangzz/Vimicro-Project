@@ -63,7 +63,7 @@ class Create_train_sample:
         self.total_lable_list = os.listdir(self.lable_path)
 
         self.save_cut_image_area_path = r'D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\cut_mark_area'
-        self.save_coco_dataset_path = r"D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\traffic_light_detection_coco"
+        self.save_coco_dataset_path = r"D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\traffic_light_detection_coco_buff"
 
     def GetAnnotBoxLoc(self,AnotPath):
         tree = ET.ElementTree(file=AnotPath)
@@ -98,7 +98,7 @@ class Create_train_sample:
             for mask_classify in train_label_info['box_info']:
                 for single_box in train_label_info['box_info'][mask_classify]:
                     conver_box_info = str(self.convert_box(single_box))
-                    train_cur.writelines(str(self.mask_lable_classify_map[mask_classify])+' '+conver_box_info.replace(',',' ')[1:-1])
+                    train_cur.writelines(str(self.mask_lable_classify_map[mask_classify])+' '+conver_box_info.replace(', ',' ')[1:-1])
                     train_cur.write('\n')
             train_cur.close()
 
@@ -130,7 +130,7 @@ class Create_train_sample:
 
                         conver_box_info = str(self.convert_box(single_box))
                         train_cur.writelines(
-                            str(create_new_sample.new_mask_lable_classify_map[classfiy_name]) + ' ' + conver_box_info.replace(',', ' ')[
+                            str(create_new_sample.new_mask_lable_classify_map[classfiy_name]) + ' ' + conver_box_info.replace(', ',' ')[
                                                                                      1:-1])
                         train_cur.write('\n')
                     except:
@@ -250,7 +250,7 @@ class Create_train_sample:
 
         else: # 自定义构造样本时
             sample_num = 0
-            my_create_sample_number = 45000
+            my_create_sample_number = 45
             for lable_xml_index in tqdm(range(my_create_sample_number)):
 
                 # lable_xml = self.total_lable_list[lable_xml_index]
@@ -260,7 +260,7 @@ class Create_train_sample:
                 # origin_image_path = os.path.join(self.total_image_list,lable_xml.split('.')[0]+'jpg')
                 train_label_info = self.cut_mark_area(LableBoxInfo)
 
-                if sample_num < 42000:
+                if sample_num < 42:
                     self.creat_coco_lable(train_label_info,sample_num, 'train', create_new_sample)
                 else:
                     self.creat_coco_lable(train_label_info,sample_num, 'val', create_new_sample)

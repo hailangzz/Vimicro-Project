@@ -1,24 +1,30 @@
-import warnings
-warnings.filterwarnings("ignore")
+import numpy as np
+import torch
+import yaml
+from scipy.cluster.vq import kmeans
 
+from tqdm import tqdm, trange
 import os
-import xml.etree.cElementTree as ET
-from PIL import Image
-import shutil
-from tqdm import tqdm
 import random
-import copy
 
-image_path = r'D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\new_mask_sample\GAL_1\image.0044.jpg'
+def get_thr_coco_value(path='./data/ccpd.yaml'): # 获取标注框的长宽比范围值
+    with open(path, 'rb') as f:
+        data_dict = yaml.load(f, Loader=yaml.FullLoader)  # model dict
+        print(data_dict)
 
-# 对新的标注区图进行resize操作
-def create_random_shape_mask_img(resize=(24,24)):
+    total_images_list = os.listdir(data_dict['train']+'/../labels')
 
-    mask_img = Image.open(image_path)
-    resize_mask1 = mask_img.resize(resize, Image.BILINEAR) # 双现行插值
-    resize_mask2 = mask_img.resize(resize, Image.ANTIALIAS)
+    w_h_min_rate=10
+    w_h_max_rate=0
+    for single_images_name in total_images_list:
+        # print(single_images_name)
+        save_label_cur = open(os.path.join(r'D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\traffic_light_detection_coco_buff\val\labels',single_images_name),'w')
 
-    resize_mask1.save('resize_mask1.jpg')
-    resize_mask2.save('resize_mask2.jpg')
+        with open(os.path.join(data_dict['val']+'/../labels',single_images_name),'r') as label_cur:
+            all_target_row_info = label_cur.readlines()
+            for single_row in all_target_row_info:
+                save_label_cur.writelines(single_row.replace('  ',' '))
+        save_label_cur.close()
 
-create_random_shape_mask_img(resize=(24,24))
+
+get_thr_coco_value()

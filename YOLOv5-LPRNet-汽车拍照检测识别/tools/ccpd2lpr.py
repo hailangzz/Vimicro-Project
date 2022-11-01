@@ -15,8 +15,8 @@ from PIL import Image
 # CCPD车牌有重复，应该是不同角度或者模糊程度
 
 total_rec_path_info={
-                     # 'train':r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\train\images',
-                     # 'val':r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\val\images',
+                     'train':r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\train\images',
+                     'val':r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\val\images',
                      'test':r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\test\images',
                      }
 

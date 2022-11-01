@@ -28,6 +28,7 @@ def detect(save_img=False):
 
     # Second-stage classifier  也就是rec 字符识别
     if classify:
+        print('classify:!!!',)
         modelc = LPRNet(lpr_max_len=8, phase=False, class_num=len(CHARS), dropout_rate=0).to(device)
         modelc.load_state_dict(torch.load(rec_weights, map_location=torch.device('cpu')))
         print("load rec pretrained model successful!")
@@ -52,6 +53,10 @@ def detect(save_img=False):
     img = torch.zeros((1, 3, imgsz, imgsz), device=device)  # init img
     _ = model(img.half() if half else img) if device.type != 'cpu' else None  # run once
     for path, img, im0s, vid_cap in dataset:
+        # print('path:',path) #图片路径
+        # print('img:',img,img.shape) # 改变标准图像尺寸后的图像矩阵
+        # print('im0s:',im0s,im0s.shape) #原始图像矩阵
+        # print('vid_cap:',vid_cap)
         img = torch.from_numpy(img).to(device)
         img = img.half() if half else img.float()  # uint8 to fp16/32
         img /= 255.0  # 0 - 255 to 0.0 - 1.0
@@ -64,10 +69,10 @@ def detect(save_img=False):
         # Apply NMS
         pred = non_max_suppression(pred, opt.conf_thres, opt.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
 
-
+        print(pred) #获取的标准图像矩阵上的检测框坐标矩阵
         # Apply Classifier
         if classify:
-            pred, plat_num = apply_classifier(pred, modelc, img, im0s)
+            pred, plat_num = apply_classifier(pred, modelc, img, im0s) #返回预测框和识别字符对应编码
 
         t2 = torch_utils.time_synchronized()
 
@@ -98,6 +103,7 @@ def detect(save_img=False):
 
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
+
                         with open(txt_path + '.txt', 'a') as f:
                             f.write(('%g ' * 5 + '\n') % (cls, xywh))  # label format
 
@@ -109,6 +115,7 @@ def detect(save_img=False):
                             #     continue
                             lb += CHARS[int(i)]
                         label = '%s %.2f' % (lb, conf)
+                        print(label) #返回识别车牌的标签
                         im0 = plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)
 
             # Print time (demo + NMS)
@@ -138,6 +145,7 @@ def detect(save_img=False):
                     vid_writer.write(im0)
 
     if save_txt or save_img:
+
         print('Results saved to %s' % os.getcwd() + os.sep + out)
         if platform == 'darwin':  # MacOS
             os.system('open ' + save_path)
@@ -148,9 +156,9 @@ def detect(save_img=False):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--classify', nargs='+', type=str, default=True, help='True rec')
-    parser.add_argument('--det-weights', nargs='+', type=str, default='./weights/yolov5_best.pt', help='model.pt path(s)')
-    parser.add_argument('--rec-weights', nargs='+', type=str, default='./weights/lprnet_best.pth', help='model.pt path(s)')
-    parser.add_argument('--source', type=str, default='./demo/images/', help='source')  # file/folder, 0 for webcam
+    parser.add_argument('--det-weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/yolov5_best.pt', help='model.pt path(s)')
+    parser.add_argument('--rec-weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/lprnet_best.pth', help='model.pt path(s)')
+    parser.add_argument('--source', type=str, default='./demo/rec_test/', help='source')  # file/folder, 0 for webcam
     parser.add_argument('--output', type=str, default='demo/rec_result', help='rec_result folder')  # rec_result folder
     parser.add_argument('--img-size', type=int, default=640, help='demo size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.4, help='object confidence threshold')
@@ -172,3 +180,4 @@ if __name__ == '__main__':
                 create_pretrained(opt.weights, opt.weights)
         else:
             detect()
+

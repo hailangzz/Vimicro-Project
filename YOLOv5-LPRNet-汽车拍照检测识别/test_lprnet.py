@@ -28,16 +28,16 @@ from utils.load_lpr_data import LPRDataLoader
 
 def get_parser():
     parser = argparse.ArgumentParser(description='parameters to train net')
-    parser.add_argument('--img_size', default=[94, 24], help='the image size')
-    parser.add_argument('--test_img_dirs', default=r"K:\MyProject\datasets\ccpd\rec\test", help='the test images path')
-    parser.add_argument('--dropout_rate', default=0, help='dropout rate.')
+    parser.add_argument('--img_size', default=(94, 24), help='the image size')
+    parser.add_argument('--test_img_dirs', default=r"./demo/rec_test", help='the test images path')
+    parser.add_argument('--dropout_rate', default=1, help='dropout rate.') #神经元屏蔽比例：
     parser.add_argument('--lpr_max_len', default=8, help='license plate number max length.')
-    parser.add_argument('--test_batch_size', default=100, help='testing batch size.')
+    parser.add_argument('--test_batch_size', default=1, help='testing batch size.')
     parser.add_argument('--phase_train', default=False, type=bool, help='train or test phase flag.')
     parser.add_argument('--num_workers', default=0, type=int, help='Number of workers used in dataloading')
     parser.add_argument('--cuda', default=False, type=bool, help='Use cuda to train model')
     parser.add_argument('--show', default=False, type=bool, help='show test image and its predict result or not.')
-    parser.add_argument('--pretrained_model', default=r'K:\MyProject\YOLOv5-LPRNet-Licence-Recognition\weights\lprnet_best.pth', help='pretrained base model')
+    parser.add_argument('--pretrained_model', default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/runsLPRNet__iteration_1000.pth', help='pretrained base model')
 
     args = parser.parse_args()
 
@@ -61,7 +61,8 @@ def test():
 
     lprnet = LPRNet(lpr_max_len=args.lpr_max_len, phase=args.phase_train, class_num=len(CHARS), dropout_rate=args.dropout_rate)
     device = torch.device("cuda:0" if args.cuda else "cpu")
-    lprnet.to(device)
+    lprnet.to(device).eval()  # 模型测试的时候使用的参数
+
     print("Successful to build network!")
 
     # load pretrained model
@@ -73,7 +74,11 @@ def test():
         return False
 
     test_img_dirs = os.path.expanduser(args.test_img_dirs)
-    test_dataset = LPRDataLoader(test_img_dirs.split(','), args.img_size, args.lpr_max_len)
+    print('test_img_dirs',test_img_dirs)
+
+    test_dataset = LPRDataLoader(test_img_dirs.split(','), args.img_size, args.lpr_max_len) #对输入样本进行预处理的类
+    print('test_dataset: ',test_dataset)
+    print('load test image number is: ',len(test_dataset))
     try:
         Greedy_Decode_Eval(lprnet, test_dataset, args)
     finally:
@@ -82,6 +87,8 @@ def test():
 def Greedy_Decode_Eval(Net, datasets, args):
     # TestNet = Net.eval()
     epoch_size = len(datasets) // args.test_batch_size
+
+    print('epoch_size::::',epoch_size,len(datasets))
     batch_iterator = iter(DataLoader(datasets, args.test_batch_size, shuffle=True, num_workers=args.num_workers, collate_fn=collate_fn))
 
     Tp = 0
@@ -111,12 +118,18 @@ def Greedy_Decode_Eval(Net, datasets, args):
         prebs = Net(images)
         # greedy decode
         prebs = prebs.cpu().detach().numpy()
+        # print('prebs:  !!!',prebs,prebs.shape)
+        # print(prebs[0,:,0])
+        # print(prebs[0, :, 1])
         preb_labels = list()
         for i in range(prebs.shape[0]):
             preb = prebs[i, :, :]  # 对每张图片 [68, 18]
+
+            # print('rec preb info:',preb,preb.shape)
             preb_label = list()
             for j in range(preb.shape[1]):  # 18  返回序列中每个位置最大的概率对应的字符idx  其中'-'是67
                 preb_label.append(np.argmax(preb[:, j], axis=0))
+            # print('preb_label: ',preb_label,len(preb_label))
             no_repeat_blank_label = list()
             pre_c = preb_label[0]
             if pre_c != len(CHARS) - 1:  # 记录重复字符
@@ -129,6 +142,7 @@ def Greedy_Decode_Eval(Net, datasets, args):
                 no_repeat_blank_label.append(c)
                 pre_c = c
             preb_labels.append(no_repeat_blank_label)  # 得到最终的无重复字符和无空白字符的序列
+            print('preb_labels: ',preb_labels,len(preb_labels))
         for i, label in enumerate(preb_labels):  # 统计准确率
             # show image and its predict label
             if args.show:
@@ -172,8 +186,9 @@ def cv2ImgAddText(img, text, pos, textColor=(255, 0, 0), textSize=12):
     if (isinstance(img, np.ndarray)):  # detect opencv format or not
         img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     draw = ImageDraw.Draw(img)
-    fontText = ImageFont.truetype("data/NotoSansCJK-Regular.ttc", textSize, encoding="utf-8")
-    draw.text(pos, text, textColor, font=fontText)
+    # fontText = ImageFont.truetype("data/NotoSansCJK-Regular.ttc", textSize, encoding="utf-8")
+    # draw.text(pos, text, textColor, font=fontText)
+    draw.text(pos, text, textColor)
 
     return cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
 

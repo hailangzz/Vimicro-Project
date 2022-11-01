@@ -56,13 +56,13 @@ def txt_translate(path, txt_path):
 
 if __name__ == '__main__':
     # det图片存储地址
-    trainDir = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\train\images\\"
-    validDir = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\val\images\\"
-    testDir = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\test\images\\"
+    trainDir = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset_weather\train\images\\"
+    validDir = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset_weather\val\images\\"
+    testDir = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset_weather\test\images\\"
     # det txt存储地址
-    train_txt_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\train\labels\\"
-    val_txt_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\val\labels\\"
-    test_txt_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\test\labels\\"
+    train_txt_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset_weather\train\labels\\"
+    val_txt_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset_weather\val\labels\\"
+    test_txt_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset_weather\test\labels\\"
     txt_translate(trainDir, train_txt_path)
     txt_translate(validDir, val_txt_path)
     txt_translate(testDir, test_txt_path)

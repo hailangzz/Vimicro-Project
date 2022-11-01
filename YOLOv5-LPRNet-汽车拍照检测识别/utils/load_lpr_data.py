@@ -16,7 +16,7 @@ CHARS = ['京', '沪', '津', '渝', '冀', '晋', '蒙', '辽', '吉', '黑',
          'W', 'X', 'Y', 'Z', 'I', 'O', '-'
          ]
 
-CHARS_DICT = {char:i for i, char in enumerate(CHARS)}
+CHARS_DICT = {char:i for i, char in enumerate(CHARS)}   # {'京': 0, '沪': 1, '津': 2, '渝': 3, '冀': 4, '晋':
 
 class LPRDataLoader(Dataset):
     def __init__(self, img_dir, imgSize, lpr_max_len, PreprocFun=None):
@@ -25,6 +25,7 @@ class LPRDataLoader(Dataset):
         for i in range(len(img_dir)):
             self.img_paths += [el for el in paths.list_images(img_dir[i])]
         random.shuffle(self.img_paths)
+        print(self.img_paths)
         self.img_size = imgSize
         self.lpr_max_len = lpr_max_len
         if PreprocFun is not None:
@@ -37,22 +38,28 @@ class LPRDataLoader(Dataset):
 
     def __getitem__(self, index):
         filename = self.img_paths[index]
+        # print(filename)
         # Image = cv2.imread(filename)
-        Image = cv2.imdecode(np.fromfile(filename, dtype=np.uint8), -1)
+        Image = cv2.imdecode(np.fromfile(filename, dtype=np.uint8), -1) # 防止无法读取汉字路径
         Image = cv2.cvtColor(Image, cv2.COLOR_RGB2BGR)
         height, width, _ = Image.shape
+        # print(self.img_size)
         if height != self.img_size[1] or width != self.img_size[0]:
-            Image = cv2.resize(Image, self.img_size)
-        Image = self.PreprocFun(Image)
-
+            self.resize = cv2.resize(Image, self.img_size)
+            Image = self.resize
+        # print('Image.shape: ',Image.shape,Image)
+        Image = self.PreprocFun(Image) #图形标准化转换
+        # print(Image.shape,Image)
         basename = os.path.basename(filename)
         imgname, suffix = os.path.splitext(basename)
+        # print('imgname, suffix: ',imgname, suffix)
         imgname = imgname.split("-")[0].split("_")[0]
         label = list()
         for c in imgname:
             # one_hot_base = np.zeros(len(CHARS))
             # one_hot_base[CHARS_DICT[c]] = 1
             label.append(CHARS_DICT[c])
+        # print('label:',label)
 
         if len(label) == 8:
             if self.check(label) == False:
@@ -61,11 +68,13 @@ class LPRDataLoader(Dataset):
 
         return Image, label, len(label)
 
-    def transform(self, img):
+    def transform(self, img): #标注化转换
         img = img.astype('float32')
         img -= 127.5
         img *= 0.0078125
-        img = np.transpose(img, (2, 0, 1))
+        img = np.transpose(img, (2, 0, 1)) #将输入图像转为（channle,x,y）
+
+        # print('img transform:',img)
 
         return img
 
@@ -76,3 +85,6 @@ class LPRDataLoader(Dataset):
             return False
         else:
             return True
+
+
+

@@ -4,9 +4,12 @@ Python train_yolov5.py
 
 
 # 测试检测模型
-Python ./detect_yolov5.py --weights ./weights/yolov5_best.pt --source ./demo/images
+Python ./detect_yolov5.py --weights D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别//yolov5_best.pt --source ./demo/images
 
 
 # 测试识别模型
 
-Python test_lprnet.py --pretrained_model ./weights/lprnet_best.pth --test_img_dirs ./demo/rec_test/皖A575N1_279.jpg --show True
+Python test_lprnet.py --pretrained_model D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/lprnet_best.pth --test_img_dirs ./demo/rec_test --show True
+
+
+

@@ -189,6 +189,8 @@ def scale_coords(img1_shape, coords, img0_shape, ratio_pad=None):
     coords[:, [1, 3]] -= pad[1]  # y padding
     coords[:, :4] /= gain
     clip_coords(coords, img0_shape)
+
+    print('还原坐标点：',coords)
     return coords
 
 
@@ -843,6 +845,8 @@ def transform( img):
     img *= 0.0078125
     img = np.transpose(img, (2, 0, 1))
 
+    print('img transform:',img)
+
     return img
 
 def apply_classifier(x, model, img, im0):
@@ -857,23 +861,36 @@ def apply_classifier(x, model, img, im0):
             b = xyxy2xywh(d[:, :4])  # boxes
             d[:, :4] = xywh2xyxy(b).long()
 
-            scale_coords(img.shape[2:], d[:, :4], im0[i].shape)
+            scale_coords(img.shape[2:], d[:, :4], im0[i].shape)  # 缩放获取原始图中的位置区域
 
             # Classes
             pred_cls1 = d[:, 5].long()
             ims = []
 
             for j, a in enumerate(d):  # per item
+                print('int(a[1]):int(a[3]), int(a[0]):int(a[2]):',int(a[1]),int(a[3]), int(a[0]),int(a[2]))
                 cutout = im0[i][int(a[1]):int(a[3]), int(a[0]):int(a[2])]
+                print('origin img:',cutout,cutout.shape)
                 im = cv2.resize(cutout, (94, 24))  # BGR
+                print('img_crop_resize:',im,im.shape)
                 im = transform(im)
                 ims.append(im)
 
             # rec
+
+            print('ims:',ims,)
+
+            # np.random.seed(1)
+            # ims = np.random.uniform(0, 1, size=[1, 3, 24, 94])
+            print('input_random ims:',ims)
+            print('torch.Tensor(ims):',torch.Tensor(ims),torch.Tensor(ims).shape)
+            print(model,d.device,type(d.device))
+
             preds = model(torch.Tensor(ims).to(d.device))  # classifier prediction
 
             prebs = preds.cpu().detach().numpy()
 
+            print('prebs: ',prebs,prebs.shape)
             # 对识别结果进行CTC后处理：删除序列中空白位置的字符，删除重复元素的字符
             preb_labels = list()
             for w in range(prebs.shape[0]):
@@ -883,6 +900,7 @@ def apply_classifier(x, model, img, im0):
                 for j in range(preb.shape[1]):
                     preb_label.append(np.argmax(preb[:, j], axis=0))
 
+                print(preb_label)
                 no_repeat_blank_label = list()
                 pre_c = preb_label[0]
 
@@ -898,7 +916,9 @@ def apply_classifier(x, model, img, im0):
                 preb_labels.append(no_repeat_blank_label)
 
             plat_num = np.array(preb_labels)
-    return x, plat_num
+            print(plat_num)
+
+    return x, plat_num  #返回检测识别框的坐标，以及对应识别出的字符编码矩阵表
 
 
 def fitness(x):

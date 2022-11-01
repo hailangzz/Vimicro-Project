@@ -1,8 +1,8 @@
-path: ../datasets/ccpd/det
-train: images/train
-val: images/val
-test: images/test
+path: D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\
+train: D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\train\images
+val: D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\val\images
+test: D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\test\images
 
 nc: 1
-names: ['licence']
+names: ['numberplate']
 
