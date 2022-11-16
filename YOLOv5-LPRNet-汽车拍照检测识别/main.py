@@ -156,8 +156,8 @@ def detect(save_img=False):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--classify', nargs='+', type=str, default=True, help='True rec')
-    parser.add_argument('--det-weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/yolov5_best.pt', help='model.pt path(s)')
-    parser.add_argument('--rec-weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/lprnet_best.pth', help='model.pt path(s)')
+    parser.add_argument('--det-weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/my_yolov5_best.pt', help='model.pt path(s)')
+    parser.add_argument('--rec-weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/LPRNet__iteration_198500.pth', help='model.pt path(s)')
     parser.add_argument('--source', type=str, default='./demo/rec_test/', help='source')  # file/folder, 0 for webcam
     parser.add_argument('--output', type=str, default='demo/rec_result', help='rec_result folder')  # rec_result folder
     parser.add_argument('--img-size', type=int, default=640, help='demo size (pixels)')

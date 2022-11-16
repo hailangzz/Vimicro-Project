@@ -68,7 +68,7 @@ def get_parser():
     parser.add_argument('--momentum', default=0.9, type=float, help='momentum')
     parser.add_argument('--weight_decay', default=2e-5, type=float, help='Weight decay for SGD')
     parser.add_argument('--lr_schedule', default=[20, 40, 60, 80, 100], help='schedule for learning rate.')
-    parser.add_argument('--save_folder', default=r'../runs',
+    parser.add_argument('--save_folder', default=r'./runs',
                         help='Location to save checkpoint models')
     parser.add_argument('--pretrained_model', default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别\lprnet_best.pth', help='no pretrain')
 

@@ -3,6 +3,7 @@
 @Date: 2022/5/29  21:24
 @github: https://github.com/HuKai97
 """
+# 注使用yolov5s模型检测出来的车牌训练识别模型：：
 # 制作车牌识别数据集~~~
 
 import cv2
@@ -50,9 +51,13 @@ def create_rec_image_dataset(rec_type,image_path):
         list_plate = plate.split('_')  # 读取车牌
         # print(list_plate)
 
-        result += str(CHARS_DICT[provinces[int(list_plate[0])]])
-        result += str(CHARS_DICT[alphabets[int(list_plate[1])]])
-        result += str(CHARS_DICT[ads[int(list_plate[2])]]) + str(CHARS_DICT[ads[int(list_plate[3])]]) + str(CHARS_DICT[ads[int(list_plate[4])]]) + str(CHARS_DICT[ads[int(list_plate[5])]]) + str(CHARS_DICT[ads[int(list_plate[6])]])
+        result += str(CHARS_DICT[provinces[int(list_plate[0])]])+'-'
+        result += str(CHARS_DICT[alphabets[int(list_plate[1])]])+'-'
+        result += str(CHARS_DICT[ads[int(list_plate[2])]])+'-'\
+                  + str(CHARS_DICT[ads[int(list_plate[3])]])+'-'\
+                  + str(CHARS_DICT[ads[int(list_plate[4])]])+'-'\
+                  + str(CHARS_DICT[ads[int(list_plate[5])]])+'-'\
+                  + str(CHARS_DICT[ads[int(list_plate[6])]])
         # 新能源车牌的要求，如果不是新能源车牌可以删掉这个if
         # if result[2] != 'D' and result[2] != 'F' \
         #         and result[-1] != 'D' and result[-1] != 'F':
@@ -65,16 +70,16 @@ def create_rec_image_dataset(rec_type,image_path):
         # img = cv2.imread(img_path)
         assert os.path.exists(img_path), "image file {} dose not exist.".format(img_path)
 
-        box = box.split('_')  # 车牌边界
-        box = [list(map(int, i.split('&'))) for i in box]
-
-        xmin = box[0][0]
-        xmax = box[1][0]
-        ymin = box[0][1]
-        ymax = box[1][1]
+        # box = box.split('_')  # 车牌边界
+        # box = [list(map(int, i.split('&'))) for i in box]
+        #
+        # xmin = box[0][0]
+        # xmax = box[1][0]
+        # ymin = box[0][1]
+        # ymax = box[1][1]
 
         img = Image.fromarray(img)
-        img = img.crop((xmin, ymin, xmax, ymax))  # 裁剪出车牌位置
+        # img = img.crop((xmin, ymin, xmax, ymax))  # 裁剪出车牌位置 ，此时不需要再裁剪图片了
         img = img.resize((94, 24), Image.LANCZOS)
         img = np.asarray(img)  # 转成array,变成24*94*3
 

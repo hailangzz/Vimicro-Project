@@ -9,6 +9,7 @@ CHARS = ['京', '沪', '津', '渝', '冀', '晋', '蒙', '辽', '吉', '黑',
          'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
          'W', 'X', 'Y', 'Z', 'I', 'O', '-'
          ]
+
 class small_basic_block(nn.Module):
     def __init__(self, ch_in, ch_out):
         super(small_basic_block, self).__init__()

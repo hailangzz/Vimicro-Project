@@ -98,6 +98,7 @@ def Greedy_Decode_Eval(Net, datasets, args):
     for i in range(epoch_size):
         # load train data
         images, labels, lengths = next(batch_iterator)
+
         start = 0
         targets = []
         for length in lengths:

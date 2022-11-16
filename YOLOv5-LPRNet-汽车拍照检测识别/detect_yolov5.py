@@ -319,8 +319,8 @@ def parse_opt():
     half: 是否使用半精度 Float16 推理 可以缩短推理时间 但是默认是False
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default=r'K:\MyProject\YOLOv5-LPRNet-Licence-Recognition\weights\yolov5_best.pt', help='model.pt path(s)')
-    parser.add_argument('--source', type=str, default=r'K:\MyProject\YOLOv5-LPRNet-Licence-Recognition\demo\images\\', help='file/dir/URL/glob, 0 for webcam')
+    parser.add_argument('--weights', nargs='+', type=str, default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别\my_yolov5_best.pt', help='model.pt path(s)')
+    parser.add_argument('--source', type=str, default=r'D:\Git_WareHouse\yolov5\test_car_brand\\', help='file/dir/URL/glob, 0 for webcam')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='NMS IoU threshold')

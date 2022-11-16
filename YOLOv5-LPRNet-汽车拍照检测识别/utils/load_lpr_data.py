@@ -65,7 +65,7 @@ class LPRDataLoader(Dataset):
             if self.check(label) == False:
                 print(imgname)
                 assert 0, "Error label ^~^!!!"
-
+        # print(imgname,label)
         return Image, label, len(label)
 
     def transform(self, img): #标注化转换
