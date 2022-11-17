@@ -1,18 +1,24 @@
 import numpy as np
-import random
-np.random.seed(1)
-traxi = np.random.uniform(0, 1, size=[1, 3, 24, 94])
-print(traxi)
+import os
+from shutil import copy2
 
-train_label_CHARS = ['京', '沪', '津', '渝', '冀', '晋', '蒙', '辽', '吉', '黑',
-                     '苏', '浙', '皖', '闽', '赣', '鲁', '豫', '鄂', '湘', '粤',
-                     '桂', '琼', '川', '贵', '云', '藏', '陕', '甘', '青', '宁',
-                     '新',
-                     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K',
-                     'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
-                     'W', 'X', 'Y', 'Z', 'I', 'O', '-'
-                    ]
-CHARS_DICT = {char:i for i, char in enumerate(train_label_CHARS)}   # {'京': 0, '沪': 1, '津': 2, '渝': 3, '冀': 4, '晋':
+total_images_path = r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_dataset\train\images'
 
-print(CHARS_DICT)
+
+origin_sample_path = r"D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD2019\ccpd_base"
+
+save_images_path = r'D:\迅雷下载\AI数据集汇总\汽车拍照检测识别\CCPD_COCO_buff\train\images'
+total_images_list = os.listdir(total_images_path)
+trainfiles = os.listdir(origin_sample_path)  #（图片文件夹）
+
+print(len(total_images_list),len(trainfiles))
+
+
+reduce_number = 0
+for single_image in trainfiles:
+    if single_image not in total_images_list:
+        reduce_number+=1
+        fileName = os.path.join(origin_sample_path, single_image)  # （图片文件夹）+图片名=图片地址
+        copy2(fileName, save_images_path)
+
+print(reduce_number)

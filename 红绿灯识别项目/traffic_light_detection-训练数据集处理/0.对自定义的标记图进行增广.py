@@ -8,6 +8,7 @@ import random
 import os
 import copy
 
+# 自定义随机生成、扩展新的标注覆盖 mask image
 class generate_more_type_image:
 
     def __init__(self):
