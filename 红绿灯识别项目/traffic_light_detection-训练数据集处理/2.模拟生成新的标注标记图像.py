@@ -12,9 +12,11 @@ import copy
 class create_new_mask_sample:
 
     def __init__(self):
-        self.new_mask_lable_classify_map={'GC_1':0, 'RC_1':1,'YC_1':2, 'GAF_1':3,'GAL_1':4,'GAR_1':5,'RAL_1':6}
+        # self.new_mask_lable_classify_map={'GC_1':0, 'RC_1':1,'YC_1':2, 'GAF_1':3,'GAL_1':4,'GAR_1':5,'RAL_1':6}
+        # self.new_mask_sample_path=r'D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\new_mask_sample'
+        self.new_mask_lable_classify_map = {'GC_1':0, 'RC_1':1,'YC_1':2, 'GAF_1':3,'GAL_1':4,'GAR_1':5,'RAF_1':6,'RAL_1':7,'RAR_1':8}
+        self.new_mask_sample_path = r'D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\new_mask_sample_CircularBackground\CircularBackground_mask'
         self.total_new_mask_sample_list=[]
-        self.new_mask_sample_path=r'D:\迅雷下载\AI数据集汇总\红绿灯检测数据集\traffic_light_detection\traffic_light_detection\new_mask_sample'
         print('hello world!',self.new_mask_sample_path)
         self.get_total_mask_sample()
         # self.create_new_coco_sample()
@@ -36,8 +38,8 @@ class create_new_mask_sample:
     def create_random_shape_mask_img(self,resize=(24,24)):
         choice_mask_info = random.choice(self.total_new_mask_sample_list)
         mask_img = Image.open(choice_mask_info['image_path'])
-        resize_mask = mask_img.resize(resize, Image.BILINEAR) # 双现行插值
-        resize_mask = mask_img.resize(resize, Image.ANTIALIAS)
+        # resize_mask = mask_img.resize(resize, Image.BILINEAR) # 双现行插值
+        resize_mask = mask_img.resize(resize, Image.ANTIALIAS) # 高质量resize
 
         return choice_mask_info['classfiy_name'],resize_mask
 

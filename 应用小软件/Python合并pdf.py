@@ -2,7 +2,7 @@ import os
 from PyPDF2 import PdfFileMerger
 
 
-target_path = r'./'  ## pdf目录文件
+target_path = r'C:\Users\34426\Documents\树萍文档'  ## pdf目录文件
 pdf_lst = [f for f in os.listdir(target_path) if f.endswith('.pdf')]
 pdf_lst = [os.path.join(target_path, filename) for filename in pdf_lst]
 

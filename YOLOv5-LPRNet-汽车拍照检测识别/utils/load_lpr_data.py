@@ -62,9 +62,11 @@ class LPRDataLoader(Dataset):
         # print('label:',label)
 
         if len(label) == 8:
-            if self.check(label) == False:
-                print(imgname)
-                assert 0, "Error label ^~^!!!"
+            # 注不检测电动车牌的有效性
+            # if self.check(label) == False:
+            #     print(imgname)
+            #     assert 0, "Error label ^~^!!!"
+            pass
         # print(imgname,label)
         return Image, label, len(label)
 

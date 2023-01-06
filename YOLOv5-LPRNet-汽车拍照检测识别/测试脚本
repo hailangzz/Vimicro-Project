@@ -10,7 +10,7 @@ Python ./detect_yolov5.py --weights D:\中星微人工智能工作\Total_Models\
 # 测试识别模型
 
 Python test_lprnet.py --pretrained_model D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/LPRNet__iteration_198500.pth --test_img_dirs ./demo/rec_test --show True
-
+Python test_lprnet_new.py --pretrained_model D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/LPRNet__iteration_198500.pth --test_img_dirs ./demo/rec_test
 
 # 注：由于实际的识别模型是在，yolov5s检测模型之后使用的，因此需要使用训练好的检测模型检测出车牌块后，再送入LPRnet网络做识别，如果直接用标注的实例训练识别模型，在用到系统中，会造成识别错误的问题。
 # 重新处理识别模型的样本

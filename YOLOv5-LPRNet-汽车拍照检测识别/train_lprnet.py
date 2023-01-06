@@ -272,3 +272,6 @@ def Greedy_Decode_Eval(Net, datasets, args):
 
 if __name__ == "__main__":
     train()
+
+
+# metric_all=0.587/0.875-mean/best, past_thr=0.588-mean: 65,25,  103,36,  122,42,  95,71,  137,51,  174,58,  125,90,  150,119,  237,90

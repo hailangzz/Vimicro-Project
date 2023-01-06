@@ -46,6 +46,10 @@ def get_thr_value(path='./data/ccpd.yaml'): # 获取标注框的长宽比范围�
 
 
 def kmean_anchors(path='./data/ccpd.yaml', n=9, img_size=640, thr=4.0, gen=1000, verbose=True):
+
+    # 将计算ancor计算结果写入到文本文件中：
+    anchors_info_cur =open(r'./anchors.txt','a+')
+
     """ Creates kmeans-evolved anchors from training dataset
 
         Arguments:
@@ -73,7 +77,7 @@ def kmean_anchors(path='./data/ccpd.yaml', n=9, img_size=640, thr=4.0, gen=1000,
         _, best = metric(torch.tensor(k, dtype=torch.float32), wh)
         return (best * (best > thr).float()).mean()  # fitness
 
-    def print_results(k):
+    def print_results(k,anchors_info_cur):
         k = k[np.argsort(k.prod(1))]  # sort small to large
         x, best = metric(k, wh0)
         bpr, aat = (best > thr).float().mean(), (x > thr).float().mean() * n  # best possible recall, anch > thr
@@ -82,6 +86,16 @@ def kmean_anchors(path='./data/ccpd.yaml', n=9, img_size=640, thr=4.0, gen=1000,
               (n, img_size, x.mean(), best.mean(), x[x > thr].mean()), end='')
         for i, x in enumerate(k):
             print('%i,%i' % (round(x[0]), round(x[1])), end=',  ' if i < len(k) - 1 else '\n')  # use in *.cfg
+
+            # 写入anchors数据
+            try:
+                anchors_info_cur.write('%i,%i' % (round(x[0]), round(x[1])), end=',  ' if i < len(k) - 1 else '\n')
+                anchors_info_cur.write('\n')
+            except Exception as e:
+                print(e)
+                continue
+
+        anchors_info_cur.close()
         return k
 
     if isinstance(path, str):  # *.yaml file
@@ -111,7 +125,7 @@ def kmean_anchors(path='./data/ccpd.yaml', n=9, img_size=640, thr=4.0, gen=1000,
     k *= s
     wh = torch.tensor(wh, dtype=torch.float32)  # filtered
     wh0 = torch.tensor(wh0, dtype=torch.float32)  # unflitered
-    k = print_results(k)
+    k = print_results(k,anchors_info_cur)
 
     # Plot
     # k, d = [None] * 20, [None] * 20
