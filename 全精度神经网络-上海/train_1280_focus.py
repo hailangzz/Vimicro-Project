@@ -480,12 +480,10 @@ def parse_opt(known=False):
 
     parser = argparse.ArgumentParser()
 
-    """如果报错“OSError: [WinError 1455] 页面文件太小,无法完成操作。 Error loading “D:\Anaco……”，就把workers改小，也可以设置为0 """  #注意一下
-
+    """如果报错“OSError: [WinError 1455] 页面文件太小,无法完成操作�?Error loading “D:\Anaco……”，就把workers改小，也可以设置�? """  #注意一�?
     parser.add_argument('--weights', type=str, default='weights/yolov5s.pt', help='initial weights path')#               # 权重文件
     parser.add_argument('--cfg', type=str, default='models/yolov5s_focus_p3.yaml', help='model.yaml path')                    # 模型文件
-    parser.add_argument('--data', type=str, default='dota_data/dota_name.yaml', help='dataset.yaml path')               # 数据集文件
-    parser.add_argument('--hyp', type=str, default='data/hyps/hyp.scratch-low.yaml', help='hyperparameters path')
+    parser.add_argument('--data', type=str, default='dota_data/dota_name.yaml', help='dataset.yaml path')               # 数据集文�?    parser.add_argument('--hyp', type=str, default='data/hyps/hyp.scratch-low.yaml', help='hyperparameters path')
     parser.add_argument('--epochs', type=int, default=150)                                                              # epoch
     parser.add_argument('--batch-size', type=int, default=64, help='total batch size for all GPUs, -1 for autobatch')   # batch size
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=1280, help='train, val image size (pixels)')
