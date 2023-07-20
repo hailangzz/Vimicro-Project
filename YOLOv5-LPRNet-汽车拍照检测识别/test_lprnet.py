@@ -37,7 +37,7 @@ def get_parser():
     parser.add_argument('--num_workers', default=0, type=int, help='Number of workers used in dataloading')
     parser.add_argument('--cuda', default=False, type=bool, help='Use cuda to train model')
     parser.add_argument('--show', default=False, type=bool, help='show test image and its predict result or not.')
-    parser.add_argument('--pretrained_model', default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/runsLPRNet__iteration_1000.pth', help='pretrained base model')
+    parser.add_argument('--pretrained_model', default=r'D:\中星微人工智能工作\Total_Models\yolov5-LPRNet-车牌检测识别/runsLPRNet__iteration_116000.pth', help='pretrained base model')
 
     args = parser.parse_args()
 

@@ -52,8 +52,8 @@ def get_parser():
     parser = argparse.ArgumentParser(description='parameters to train net')
     parser.add_argument('--max_epoch', default=100, help='epoch to train the network')
     parser.add_argument('--img_size', default=[94, 24], help='the image size')
-    parser.add_argument('--train_img_dirs', default=r"K:\MyProject\datasets\ccpd\rec\train", help='the train images path')
-    parser.add_argument('--test_img_dirs', default=r"K:\MyProject\datasets\ccpd\rec\val", help='the test images path')
+    parser.add_argument('--train_img_dirs', default=r"/home/dataset//rec_car_brand_train_database_focus8_LPR", help='the train images path')
+    parser.add_argument('--test_img_dirs', default=r"/home/vimicro/git_workspace/YOLOv5-LPRNet-master1/datasets/CCPD_rec_images/val/images/", help='the test images path')
     parser.add_argument('--dropout_rate', default=0.5, help='dropout rate.')
     parser.add_argument('--learning_rate', default=0.01, help='base value of learning rate.')
     parser.add_argument('--lpr_max_len', default=8, help='license plate number max length.')
@@ -186,10 +186,10 @@ def train():
         # backprop
         optimizer.zero_grad()
 
-        # log_probs: 预测结果 [18, bs, 68]  其中18为序列长度  68为字典数
+        # log_probs: 棰勬祴缁撴灉 [18, bs, 68]  鍏朵腑18涓哄簭鍒楅暱搴? 68涓哄瓧鍏告暟
         # labels: [93]
-        # input_lengths:  tuple   example: 000=18  001=18...   每个序列长度
-        # target_lengths: tuple   example: 000=7   001=8 ...   每个gt长度
+        # input_lengths:  tuple   example: 000=18  001=18...   姣忎釜搴忓垪闀垮害
+        # target_lengths: tuple   example: 000=7   001=8 ...   姣忎釜gt闀垮害
         loss = ctc_loss(log_probs, labels, input_lengths=input_lengths, target_lengths=target_lengths)
         if loss.item() == np.inf:
             continue

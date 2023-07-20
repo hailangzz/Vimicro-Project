@@ -25,7 +25,7 @@ class LPRDataLoader(Dataset):
         for i in range(len(img_dir)):
             self.img_paths += [el for el in paths.list_images(img_dir[i])]
         random.shuffle(self.img_paths)
-        print(self.img_paths)
+        # print(self.img_paths)
         self.img_size = imgSize
         self.lpr_max_len = lpr_max_len
         if PreprocFun is not None:

@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/YOLOv5-LPRNet-汽车拍照检测识别" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/YOLOv5-LPRNet-汽车拍照检测识别/models" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (处理标签文件)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (pytorch迁移学习)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
