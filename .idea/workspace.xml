@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="482043b2-15ac-4fc4-b7fd-fdc67a3d4e9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Vimicro-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Vimicro-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/1.汇总DMS模型的检测效果.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/1.汇总DMS模型的检测效果.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/2.测试DMS模型的精确率_召回率指标.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/2.测试DMS模型的精确率_召回率指标.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/TS转MP4.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/TS转MP4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/合并多个TS视频.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/合并多个TS视频.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/将分段的DMS切分时间整合为一段连续图像样本.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/将分段的DMS切分时间整合为一段连续图像样本.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/读取视频帧率.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试/读取视频帧率.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuChang_TotalProgram/关键点检测文件修改脚本/循环生成左边索引数组.py" beforeDir="false" afterPath="$PROJECT_DIR$/LuChang_TotalProgram/关键点检测文件修改脚本/循环生成左边索引数组.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/1.批量将图片reshape.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/1.批量将图片reshape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/4.bin格式图像数据操作.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/4.bin格式图像数据操作.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/CPDD_车牌数据处理/1.创建车牌数据标注文件.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/CPDD_车牌数据处理/1.创建车牌数据标注文件.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/data/PrivacyMaskingCarPlateFace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/data/PrivacyMaskingCarPlateFace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/data/aluminum_bad_points.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/data/aluminum_bad_points.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/finetune.sh" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/finetune.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/prune.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/prune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/prune.sh" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/prune.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/train_sparsity.sh" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/train_sparsity.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/utils/loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/utils/loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/utils/prune_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/utils/prune_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/训练脚本" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/训练脚本" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/bin图像数据操作/4.bin格式图像数据操作.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/bin图像数据操作/4.bin格式图像数据操作.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/myvoc_to_yolov3coco.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/1.分训练集与验证集.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/1.分训练集与验证集.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/2.修改JPEGImages为images.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/2.修改JPEGImages为images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/3.扣除目标图像准备训练deepsort网络.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/3.扣除目标图像准备训练deepsort网络.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/python绘图/绘制折线图.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/python绘图/绘制折线图.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/voc_to_coco.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/修改视频帧率保存为加速版视频/保存加速版视频.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/修改视频帧率保存为加速版视频/保存加速版视频.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/1.cut_image_from_vidoe_逐帧切分.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/1.cut_image_from_vidoe_逐帧切分.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/1.cut_image_from_vidoe提取视频图片_上海DVR.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/1.cut_image_from_vidoe提取视频图片_上海DVR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/路畅DMS模型测试样本集构造/创建DMS测试集的随机子测试集.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/路畅DMS模型测试样本集构造/创建DMS测试集的随机子测试集.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/路畅DMS模型测试样本集构造/迭代路径下_测试视频集汇总——切分为测试数据集.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/路畅DMS模型测试样本集构造/迭代路径下_测试视频集汇总——切分为测试数据集.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/PIL图像增强.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/PIL图像增强.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/RGB图像转红外图.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/RGB图像转红外图.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/RGB转DMS图.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/RGB转DMS图.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/C语言将图片处理成毛玻璃效果" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/C语言将图片处理成毛玻璃效果" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/YUV图像高斯模糊.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/YUV图像高斯模糊.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/图片毛玻璃样式模糊_自己控制编写.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/图片毛玻璃样式模糊_自己控制编写.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/毛玻璃效果-高斯滤波.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/图像增强/隐私遮蔽毛玻璃效果/毛玻璃效果-高斯滤波.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/文字识别标注辅助工具/6.2筛选PaddleOCR识别的车牌文本标签_SZ_DVR.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/文字识别标注辅助工具/6.2筛选PaddleOCR识别的车牌文本标签_SZ_DVR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/文字识别标注辅助工具/车牌识别项目_继续迭代_20230518/车牌识别迭代_总流程记录" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/文字识别标注辅助工具/车牌识别项目_继续迭代_20230518/车牌识别迭代_总流程记录" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/文字识别标注辅助工具/项目文件信息记录" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/文字识别标注辅助工具/项目文件信息记录" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/标注格式转换/整个json标注文件(铝片缺陷数据集)转Yolo格式标注.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/标注格式转换/整个json标注文件(铝片缺陷数据集)转Yolo格式标注.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/疲劳驾驶数据集_to_yolov3coco.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/目标检测中数据集格式之间的相互转换--coco、voc、yolo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_finetunt.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_finetunt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/应用小软件/word_to_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/应用小软件/word_to_pdf.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="0907be83-aeff-4cfd-840c-77b5c2ca3d27" />
+  <component name="ProjectId" id="2Qowmnt2M3Dp95l0ohnQYjPDGW1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NPU部署相关程序/图像增强" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Git_Workspace\Vimicro-Project\NPU部署相关程序\图像增强" />
+      <recent name="E:\Git_Workspace\Vimicro-Project\NPU部署相关程序\切分视频形成图片数据集" />
+      <recent name="E:\Git_Workspace\Vimicro-Project\NPU部署相关程序\Yolov5剪枝\yolov5s_prune\weights" />
+      <recent name="E:\Git_Workspace\Vimicro-Project\NPU部署相关程序\Yolov5剪枝\yolov5s_prune\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Git_Workspace\Vimicro-Project\NPU部署相关程序\切分视频形成图片数据集" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.绘制折线图">
+    <configuration name="绘制折线图" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Vimicro-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NPU部署相关程序/python绘图" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NPU部署相关程序/python绘图/绘制折线图.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="1.分训练集与验证集" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Vimicro-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/1.分训练集与验证集.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="2.修改JPEGImages为images" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Vimicro-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/2.修改JPEGImages为images.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="3.扣除目标图像准备训练deepsort网络" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Vimicro-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪/3.扣除目标图像准备训练deepsort网络.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RGB图像转红外图" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Vimicro-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NPU部署相关程序/图像增强" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NPU部署相关程序/图像增强/RGB图像转红外图.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RGB转DMS图" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Vimicro-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NPU部署相关程序/图像增强" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NPU部署相关程序/图像增强/RGB转DMS图.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.绘制折线图" />
+        <item itemvalue="Python.RGB图像转红外图" />
+        <item itemvalue="Python.RGB转DMS图" />
+        <item itemvalue="Python.3.扣除目标图像准备训练deepsort网络" />
+        <item itemvalue="Python.2.修改JPEGImages为images" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="482043b2-15ac-4fc4-b7fd-fdc67a3d4e9e" name="Default Changelist" comment="" />
+      <created>1686033403643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686033403643</updated>
+      <workItem from="1686033405734" duration="1703000" />
+      <workItem from="1686549778797" duration="36672000" />
+      <workItem from="1686725561184" duration="2388000" />
+      <workItem from="1686815472249" duration="5911000" />
+      <workItem from="1687138282032" duration="18915000" />
+      <workItem from="1687657756464" duration="9153000" />
+      <workItem from="1687690002056" duration="2952000" />
+      <workItem from="1687745632241" duration="12346000" />
+      <workItem from="1688001039140" duration="949000" />
+      <workItem from="1688435123543" duration="8180000" />
+      <workItem from="1688629064874" duration="8108000" />
+      <workItem from="1689063297114" duration="7674000" />
+      <workItem from="1689730635214" duration="4823000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="727" y="287" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1686639464711">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="727" y="287" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1686639464711" />
+    <state width="1618" height="466" key="DebuggerActiveHint" timestamp="1686713589086">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1618" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1686713589086" />
+    <state x="766" y="441" key="FileChooserDialogImpl" timestamp="1686037945042">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="766" y="441" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1686037945042" />
+    <state width="1877" height="204" key="GridCell.Tab.0.bottom" timestamp="1689734358711">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1689734358711" />
+    <state width="1877" height="204" key="GridCell.Tab.0.center" timestamp="1689734358710">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="204" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1689734358710" />
+    <state width="1877" height="204" key="GridCell.Tab.0.left" timestamp="1689734358710">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="204" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1689734358710" />
+    <state width="1877" height="204" key="GridCell.Tab.0.right" timestamp="1689734358711">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="204" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1689734358711" />
+    <state width="1476" height="356" key="GridCell.Tab.1.bottom" timestamp="1688637239909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1476" height="356" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1688637239909" />
+    <state width="1476" height="356" key="GridCell.Tab.1.center" timestamp="1688637239909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1476" height="356" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1688637239909" />
+    <state width="1476" height="356" key="GridCell.Tab.1.left" timestamp="1688637239909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1476" height="356" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1688637239909" />
+    <state width="1476" height="356" key="GridCell.Tab.1.right" timestamp="1688637239909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1476" height="356" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1688637239909" />
+    <state x="599" y="227" key="RollbackChangesDialog" timestamp="1687318314056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="599" y="227" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1687318314056" />
+    <state x="489" y="131" key="SettingsEditor" timestamp="1686638442306">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="489" y="131" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1686638442306" />
+    <state width="836" height="523" key="XDebugger.FullValuePopup" timestamp="1687675269596">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="836" height="523" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1687675269596" />
+    <state x="590" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1687660210499">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="590" y="244" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1687660210499" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune/utils/torch_utils.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_train.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_train.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_train.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>118</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>147</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>148</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义/my_net_prune.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/1.cut_image_from_vidoe_逐帧切分.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/1.cut_image_from_vidoe_逐帧切分.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/CPDD_车牌数据处理/1.创建车牌数据标注文件.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/CPDD_车牌数据处理/1.创建车牌数据标注文件.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NPU部署相关程序/CPDD_车牌数据处理/1.创建车牌数据标注文件.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="model.features.T_destination" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Vimicro_Project$.coverage" NAME="绘制折线图 Coverage Results" MODIFIED="1689734358699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/python绘图" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$my_net_prune.coverage" NAME="my_net_prune Coverage Results" MODIFIED="1686711879405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$TS.coverage" NAME="合并多个TS视频 Coverage Results" MODIFIED="1687751832719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$1_reshape.coverage" NAME="1.批量将图片reshape Coverage Results" MODIFIED="1688608165924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$RGB.coverage" NAME="RGB图像转红外图 Coverage Results" MODIFIED="1689732352142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/图像增强" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$1_.coverage" NAME="1.分训练集与验证集 Coverage Results" MODIFIED="1689131313139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$3_deepsort.coverage" NAME="3.扣除目标图像准备训练deepsort网络 Coverage Results" MODIFIED="1689226910299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$DMS.coverage" NAME="将分段的DMS切分时间整合为一段连续图像样本 Coverage Results" MODIFIED="1687861844476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$4_bin.coverage" NAME="4.bin格式图像数据操作 Coverage Results" MODIFIED="1686549996499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/bin图像数据操作" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$RGBDMS.coverage" NAME="RGB转DMS图 Coverage Results" MODIFIED="1689732182177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/图像增强" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$json__Yolo__1_.coverage" NAME="整个json标注文件(铝片缺陷数据集)转Yolo格式标注 (1) Coverage Results" MODIFIED="1686635705498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/标注格式转换" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$my_net_train__1_.coverage" NAME="my_net_train (1) Coverage Results" MODIFIED="1686708109523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$jsonYolo.coverage" NAME="整个json标注文件转Yolo格式标注 Coverage Results" MODIFIED="1686623423011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/标注格式转换" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$export.coverage" NAME="export Coverage Results" MODIFIED="1686638486849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/Yolov5剪枝/yolov5s_prune" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$1_cut_image_from_vidoe_.coverage" NAME="1.cut_image_from_vidoe_逐帧切分 Coverage Results" MODIFIED="1687758407479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$1_LPN_net.coverage" NAME="1.查看自定义LPN_net网络结构 Coverage Results" MODIFIED="1686650305938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/pytorch查看模型结构信息" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$_.coverage" NAME="迭代路径下_测试视频集汇总——切分为测试数据集 Coverage Results" MODIFIED="1687314458600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集/路畅DMS模型测试样本集构造" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$1_DMS.coverage" NAME="1.汇总DMS模型的检测效果 Coverage Results" MODIFIED="1687334815789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$2_DMS_.coverage" NAME="2.测试DMS模型的精确率_召回率指标 Coverage Results" MODIFIED="1687675548092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$TSMP4.coverage" NAME="TS转MP4 Coverage Results" MODIFIED="1687743993141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LuChang_TotalProgram/ADAS_DMS_Program/模型效果测试" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$2_JPEGImagesimages.coverage" NAME="2.修改JPEGImages为images Coverage Results" MODIFIED="1689154275823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/pascal VOC数据集处理-目标检测+跟踪" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$1_cut_image_from_vidoe_DVR.coverage" NAME="1.cut_image_from_vidoe提取视频图片_上海DVR Coverage Results" MODIFIED="1687223659769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/切分视频形成图片数据集" />
+    <SUITE FILE_PATH="coverage/Vimicro_Project$my_net_finetunt.coverage" NAME="my_net_finetunt Coverage Results" MODIFIED="1686706859613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NPU部署相关程序/网络模型剪枝_自定义" />
+  </component>
+</project>

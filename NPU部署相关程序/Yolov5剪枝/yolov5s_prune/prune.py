@@ -65,6 +65,7 @@ def prune(data,
 
     # Initialize/load model and set device
     training = model is not None
+
     if training:  # called by train.py
         # get model device, PyTorch model
         device, pt, jit, engine = next(
@@ -81,7 +82,7 @@ def prune(data,
         (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True,
                                                               exist_ok=True)  # make dir
 
-        # Load model
+        # Load model 加载模型参数等信息
         model = DetectMultiBackend(weights, device=device, dnn=dnn, fuse=False)
         stride, pt, jit, engine = model.stride, model.pt, model.jit, model.engine
         imgsz = check_img_size(imgsz, s=stride)  # check image size
@@ -92,14 +93,15 @@ def prune(data,
 
     model.eval()
 
-    # prune model start
+    # prune model start 开始进行模型的剪枝操作：ignore_bn_list为不进行剪枝的:batch_node
     model_list, ignore_bn_list = get_bn_list(model)
 
-    # replace origin yaml with pruned yaml
+    # replace origin yaml with pruned yaml #pruned_yaml相对于原始给定的模型结构框架只是替换了C3，SPFF的算子名称而已
     pruned_yaml = get_pruned_yaml(cfg, model.model[-1].nc)
     # bn weight need to be pruned(masked)
     model, mask_bn = get_mask_bn(model, ignore_bn_list, get_prune_threshold(model_list, percent))
-    pruned_model = Model(cfg=pruned_yaml, ch=3, mask_bn=mask_bn).cuda()
+    # pruned_model = Model(cfg=pruned_yaml, ch=3, mask_bn=mask_bn).cuda()
+    pruned_model = Model(cfg=pruned_yaml, ch=3, mask_bn=mask_bn)
 
     # Compatibility updates
     for m in pruned_model.modules():
@@ -113,7 +115,8 @@ def prune(data,
     # prune model end
 
     torch.save({'model': deepcopy(de_parallel(pruned_model)).half(), }, save_dir / "pruned_model.pt")
-    pruned_model.cuda().eval()
+    # pruned_model.cuda().eval()
+    pruned_model.eval() # cpu
     is_coco = isinstance(data.get('val'), str) and data['val'].endswith('coco/val2017.txt')  # COCO dataset
 
     # Dataloader
@@ -146,13 +149,13 @@ def prune(data,
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', type=str, default=ROOT /
-                        'data/voc.yaml', help='dataset.yaml path')
-    parser.add_argument('--weights', nargs='+', type=str, default=ROOT /
-                        'runs/train/exp47/weights/last.pt', help='model.pt path(s)')
+                        'data/PrivacyMaskingCarPlateFace.yaml', help='dataset.yaml path')
+    parser.add_argument('--weights', nargs='+', type=str, default=
+                        r'D:\迅雷下载\AI数据集汇总\\runs/train/PrivacyMasking_yolov5s_pruned3/weights/last.pt', help='model.pt path(s)')
     parser.add_argument('--cfg', type=str,
-                        default='models/yolov5l.yaml', help='model.yaml path')
+                        default=ROOT / 'models/yolov5s_PrivacyMaskingCarPlateFace.yaml', help='model.yaml path')
     parser.add_argument('--percent', type=float,
-                        default=0.4, help='prune percentage')
+                        default=0.43, help='prune percentage')
     parser.add_argument('--batch-size', type=int,
                         default=32, help='batch size')
     parser.add_argument('--imgsz', '--img', '--img-size',
@@ -163,7 +166,7 @@ def parse_opt():
                         default=0.6, help='NMS IoU threshold')
     parser.add_argument('--task', default='val',
                         help='train, val, test, speed or study')
-    parser.add_argument('--device', default='',
+    parser.add_argument('--device', default='cpu',
                         help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--workers', type=int, default=8,
                         help='max dataloader workers (per RANK in DDP mode)')
@@ -212,6 +215,7 @@ def main():
     results_origin, _, _ = val.run(**params)
     results_prune = prune(**params_prune)
     names = ['P', 'R', 'mAP@.5', 'mAP@.5:.95']
+
     print("=" * 100)
     for (name, o, p) in zip(names, results_origin, results_prune):
         print('|\t {:<10} | origin:{:<10.4f} | after prune:{:<10.4f} | loss ratio:{:<10.4f}'.format(

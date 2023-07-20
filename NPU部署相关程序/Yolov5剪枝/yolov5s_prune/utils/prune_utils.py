@@ -53,7 +53,7 @@ def get_bn_list(model):
 
 
 def get_prune_threshold(model_list, percent):
-    bn_weights = gather_bn_weights(model_list)
+    bn_weights = gather_bn_weights(model_list) #获取模型所有层的批标准化时的权值参数信息：
     sorted_bn = torch.sort(bn_weights)[0]
 
     # 避免剪掉所有channel的最高阈值(每个BN层的gamma的最大值的最小值即为阈值上限)
@@ -61,7 +61,7 @@ def get_prune_threshold(model_list, percent):
     for bnlayer in model_list.values():
         highest_thre.append(bnlayer.weight.data.abs().max().item())
 
-    highest_thre = min(highest_thre)
+    highest_thre = min(highest_thre)  # 找到了所有网络层中，最大权值信息里的最小权值限制值
     # 找到highest_thre对应的下标对应的百分比
     threshold_index = (sorted_bn == highest_thre).nonzero().squeeze()
     if len(threshold_index.shape) > 0:
@@ -70,7 +70,7 @@ def get_prune_threshold(model_list, percent):
     print('Suggested Gamma threshold should be less than {}'.format(highest_thre))
     print('The corresponding prune ratio is {}, but you can set higher'.format(percent_threshold))
     thre_index = int(len(sorted_bn) * percent)
-    thre_prune = sorted_bn[thre_index]
+    thre_prune = sorted_bn[thre_index] # 获取剪枝的权值系数最小值
     print('Gamma value that less than {} are set to zero'.format(thre_prune))
     print("=" * 94)
     print(f"|\t{'layer name':<25}{'|':<10}{'origin channels':<20}{'|':<10}{'remaining channels':<20}|")
@@ -110,8 +110,9 @@ def get_mask_bn(model, ignore_bn_list, thre_prune):
         if isinstance(bnlayer, nn.BatchNorm2d):
             bn_module = bnlayer
             mask = obtain_bn_mask(bn_module, thre_prune)
-            if bnname in ignore_bn_list:
-                mask = torch.ones(bnlayer.weight.data.size()).cuda()
+            if bnname in ignore_bn_list:  #如果算子名称是不可剪枝的
+                # mask = torch.ones(bnlayer.weight.data.size()).cuda()
+                mask = torch.ones(bnlayer.weight.data.size())  # cpu
             mask_bn[bnname] = mask
             remain_num += int(mask.sum())
             bn_module.weight.data.mul_(mask)
@@ -222,13 +223,15 @@ def gather_conv_weights(module_list):
 
 def obtain_bn_mask(bn_module, thre):
 
-    thre = thre.cuda()
+    # thre = thre.cuda()
+    thre = thre  # cpu
     mask = bn_module.weight.data.abs().ge(thre).float()
 
     return mask
 
 
 def obtain_conv_mask(conv_module, thre):
-    thre = thre.cuda()
+    # thre = thre.cuda()
+    thre = thre # cpu
     mask = conv_module.weight.data.abs().sum(dim=1).sum(dim=1).sum(dim=1).ge(thre).float()
     return mask

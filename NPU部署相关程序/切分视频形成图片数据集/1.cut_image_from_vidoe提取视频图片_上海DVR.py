@@ -5,9 +5,9 @@ from tqdm import tqdm
 class cut_image_from_vidoe():
 
     def __init__(self):
-        self.origin_vidoe_path = r"D:\迅雷下载\AI数据集汇总\test_vidoe"
+        self.origin_vidoe_path = r"D:\LuChang_Program_Total\ADAS_DMS项目\项目测试数据集\夜间驾驶样本\xi_an"
         self.total_vidoe_path_list = os.listdir(self.origin_vidoe_path)
-        self.save_path = r'D:\迅雷下载\AI数据集汇总\test_vidoe_Image_dataset\train\images'
+        self.save_path = r'D:\LuChang_Program_Total\ADAS_DMS项目\项目测试数据集\ADASTestDatabase\夜间ADAS测试样本\xi_an'
         # print(self.total_vidoe_path_list)
 
     def getFrame(self,frame_interval):
@@ -21,7 +21,7 @@ class cut_image_from_vidoe():
             cap = cv2.VideoCapture(os.path.join(self.origin_vidoe_path,single_vidoe))
             numFrame = 0
             fps = cap.get(cv2.CAP_PROP_FPS)  # 获取视频的帧率
-            frame_interval = int(fps/3) # 根据视频帧计算每秒取两针
+            frame_interval = int(fps/2) # 根据视频帧计算每秒取两针
             # print(fps) # 30，为每秒30帧:
             while True:
                 if cap.grab(): # 用来指向下一帧
